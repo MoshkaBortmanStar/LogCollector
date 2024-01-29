@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    topic-name: ${KAFKA_TOPIC_NAME:changes-data-set}
+
+
+debezium:
+  data-base-name: ${DATA_POSTGRES_NAME:data}
+  data-base-host: ${POSTGRES_HOST:localhost}
+  data-base-port: ${POSTGRES_PORT:5432}
+  data-base-user-name: ${DATA_POSTGRES_USERNAME:postgres}
+  data-base-password: ${DATA_POSTGRES_PASSWORD:admin}
+  data-base-server-name: ${DEBEZIUM_SERVER_NAME_PUBLIC:log_debezium}
+  debezium-offset-file: ${DEBEZIUM_OFFSET_FILE_PUBLIC:src/main/resources/static/log_debezium.dat}
+  name: ${DEBEZIUM_NAME_PUBLIC:log_debezium}
+  slot-name: ${DEBEZIUM_SLOT_NAME_PUBLIC:log_debezium}
+  topic-prefix: ${DEBEZIUM_TOPIC_PREFIX_PUBLIC:log_debezium}
+  table-include-list: public.item
+  heartbeat-interval-ms: 30000
